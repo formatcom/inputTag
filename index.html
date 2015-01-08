@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="inputTag">
+<head>
+	<meta charset="UTF-8">
+	<title>Tags</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js"></script>
+	<link rel="stylesheet" href="assets/css/style.min.css">
+	<script type="text/javascript" src="assets/js/main.js"></script>
+</head>
+<body>
+	<div class="container" data-ng-controller="tagController">
+		Categorias :3 <br/><br/>
+
+		<div class="categorias">
+			<ul>
+				<div data-ng-repeat="(key, item) in categorias">
+					<li data-ng-class="{activeTag:item.active}" data-ng-click="tagGenerate(item.title, key)">
+						{{item.title}}
+					</li>
+				</div>
+			</ul>
+		</div>
+		<br/><br/>
+	
+		<div class="tags">
+			<div class="tag" data-ng-repeat="(key, tag) in tags">
+				<div class="cerrar">
+					<span data-ng-click="tagDelete(key)">x</span>
+				</div>
+				<span>{{tag.title}}</span>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
